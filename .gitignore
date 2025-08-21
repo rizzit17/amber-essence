@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Keep these files tracked
+!index.html
+!src/App.js
+!src/index.js

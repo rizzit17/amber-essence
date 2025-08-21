@@ -1,0 +1,202 @@
+/* src/styles/menu.css */
+.menu-hero {
+    height: 40vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+  }
+  
+  .menu-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/images/menu-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    z-index: -1;
+  }
+  
+  .menu-hero h1 {
+    font-size: 3.5rem;
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: white;
+  }
+  
+  .menu-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+  }
+  
+  .menu-categories-wrapper {
+    position: sticky;
+    top: 80px;
+    background-color: var(--white);
+    padding: 15px 0;
+    margin: 40px 0;
+    z-index: 10;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .menu-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .menu-category {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-category:hover {
+    background-color: var(--primary-light);
+  }
+  
+  .menu-category.active {
+    background-color: #E1C16E;
+    color: #7d4101;
+  }
+  
+  .menu-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .menu-item {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .menu-item-image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .menu-item:hover .menu-item-image img {
+    transform: scale(1.1);
+  }
+  
+  .menu-item-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  
+  .menu-item-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 0;
+  }
+  
+  .menu-item-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  
+  .menu-item-description {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: var(--text-medium);
+    flex-grow: 1;
+  }
+  
+  .menu-item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .tag.vegetarian {
+    background-color: #e3f5e1;
+    color: #2e7d32;
+  }
+  
+  .tag.spicy {
+    background-color: #fbe7e7;
+    color: #d32f2f;
+  }
+  
+  .tag.chef-special {
+    background-color: #fff8e1;
+    color: #f57c00;
+  }
+  
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+  }
+  
+  .no-items {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--text-medium);
+  }
+  
+  @media (max-width: 768px) {
+    .menu-item {
+      flex-direction: column;
+    }
+  
+    .menu-item-image {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .menu-hero h1 {
+      font-size: 2.5rem;
+    }
+  }

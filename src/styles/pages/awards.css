@@ -1,0 +1,333 @@
+/* src/styles/pages/awards.css */
+/* Enhanced Modern UI */
+
+:root {
+  --primary: #5C3A21;
+  --primary-dark: #4A2E1A;
+  --primary-light: #7A5A44;
+  --accent: #FFF9C4;
+  --text-dark: #2d2d2d;
+  --text-medium: #4a4a4a;
+  --text-light: #e0e0e0;
+  --font-heading: 'Lora', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Hero Section - More Premium Look */
+.awards-hero {
+  height: 70vh;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.awards-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/images/interior-1.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation: zoomEffect 20s infinite alternate;
+  will-change: transform;
+}
+
+@keyframes zoomEffect {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.awards-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  z-index: -1;
+}
+
+.awards-hero h1 {
+  font-size: 5rem;
+  font-family: var(--font-heading);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  animation: fadeInUp 1s ease-out;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.awards-hero p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
+  opacity: 0;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  font-weight: 300;
+  color: white;
+}
+
+/* Intro Section - More Elegant */
+.awards-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+.awards-intro h2 {
+  font-size: 3.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.awards-intro h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 2px;
+}
+
+.awards-intro p {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--text-dark);
+  letter-spacing: 0.2px;
+}
+
+/* Awards List - Modified for Centered Layout */
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  max-width: 1200px;
+}
+
+.award-item {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.03);
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.award-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.award-image {
+  width: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f9fafc 0%, #f0f2f5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.award-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%);
+}
+
+.award-image img {
+  max-width: 30%;
+  max-height: 40%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.15));
+  transition: transform 0.4s ease;
+}
+
+.award-item:hover .award-image img {
+  transform: scale(1);
+}
+
+.award-content {
+  padding: 2.5rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.award-year {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 10px rgba(212, 167, 98, 0.3);
+}
+
+.award-title {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin: 0 0 0.8rem;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.award-organization {
+  font-size: 1.15rem;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.award-organization::before,
+.award-organization::after {
+  content: '*';
+  position: absolute;
+  color: brown;
+  font-size: 1.5rem;
+}
+
+.award-organization::before {
+  left: -0.5rem;
+}
+
+.award-organization::after {
+  right: -0.5rem;
+}
+
+.award-description {
+  line-height: 1.8;
+  color: var(--text-medium);
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .awards-hero h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .awards-hero h1 {
+    font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .awards-hero {
+    height: 60vh;
+    min-height: 500px;
+  }
+  
+  .awards-hero h1 {
+    font-size: 3.2rem;
+  }
+  
+  .awards-hero p {
+    font-size: 1.3rem;
+  }
+  
+  .awards-intro h2 {
+    font-size: 2.6rem;
+  }
+  
+  .award-item {
+    width: 95%;
+  }
+  
+  .award-image {
+    min-height: 240px;
+  }
+  
+  .award-image img {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}
+
+@media (max-width: 576px) {
+  .awards-hero h1 {
+    font-size: 2.6rem;
+  }
+  
+  .awards-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .awards-intro h2 {
+    font-size: 2.2rem;
+  }
+  
+  .award-content {
+    padding: 2rem;
+  }
+  
+  .award-image {
+    min-height: 200px;
+    padding: 1.5rem;
+  }
+  
+  .award-image img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}

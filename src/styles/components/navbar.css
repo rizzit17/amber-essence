@@ -1,0 +1,157 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: var(--z-index-fixed);
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    background-color: rgba(75, 38, 3, 0.95);
+    padding: 0.8rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo a {
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.navbar-logo img {
+    height: 60px;
+    border-radius: 50px;
+    margin-right: 1rem;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem; /* Reduced gap between boxes */
+    margin-right: 2rem;
+}
+
+/* Updated link styles with box design */
+.navbar-links a {
+    color: #3e2723;
+    font-weight: 1000;
+    padding: 0.8rem 1.25rem;
+    position: relative;
+    background-color: rgba(222, 176, 107, 0.75); /* Reduced opacity white */
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px); /* Optional subtle blur effect */
+}
+
+/* Remove the underline effect */
+.navbar-links a:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.navbar-links a.active {
+    background-color: rgba(240, 240, 240, 0.9);
+    font-weight: 1000;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+.navbar-actions a, 
+.navbar-actions button {
+    padding: 0.8rem 1.25rem;        /* Horizontal padding ensures pill shape */
+    font-weight: 800;
+    color: #5C3A21;                 /* Brown text */
+    background-color: #fbfbfb;      /* Light yellow background */
+    border-radius: 20px;            /* Fully rounded (pill shape) */
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.navbar-actions a:hover, 
+.navbar-actions button:hover {
+    background-color: brown;      
+    transform: translateY(-1px);
+}
+
+/* Mobile menu styles */
+@media (max-width: 992px) {
+    .navbar-links a {
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on mobile */
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 100;
+    }
+
+    .navbar-links.active {
+        transform: translateX(0);
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .navbar-links a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .navbar-actions {
+        position: fixed;
+        bottom: 20%;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 100;
+    }
+
+    .navbar-actions.active {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-logo span {
+        display: none;
+    }
+}
